@@ -121,6 +121,5 @@ curl_close($handle);
 </html>
 
 <?php
-/*	sleep(30);
-	redirect($desc); */
+	redirect($desc);
 ?>
