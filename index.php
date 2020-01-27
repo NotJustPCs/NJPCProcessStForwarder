@@ -122,4 +122,5 @@ curl_close($handle);
 
 <?php
 	sleep(10);
+	redirect($desc);
 ?>
