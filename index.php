@@ -56,7 +56,7 @@ if($httpCode == 404) {
         $row = explode(' ',$row);
         foreach($row as $cell){
           echo '<td>';
-          echo $row;
+          echo key($row);
           echo '</td>';
           echo '<td>';
           echo $cell;
