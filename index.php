@@ -51,13 +51,12 @@ if($httpCode == 404) {
     echo '<strong>Original Ticket Description: </strong>' . $originaldesc . '<br>';
     echo '<strong>Cleaned Ticket Description: </strong>' . $desc . '<br>';
     echo '<strong>Word numbers of Ticket Description: </strong><br><table>';
-    $descbitnum = 0;
     foreach($descbits as $row){
         echo '<tr>';
         $row = explode(' ',$row);
         foreach($row as $cell){
           echo '<td>';
-          echo key($cell);
+          echo $row;
           echo '</td>';
           echo '<td>';
           echo $cell;
