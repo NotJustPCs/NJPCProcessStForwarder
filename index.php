@@ -24,7 +24,8 @@ if ($org == 'eBay') {
         $desc = $org . $descbits[1];
     }
 elseif ($org == 'Companies House') {
-    if ($descbits[2] == 'confirmation' && $descbits[3] == 'statement') {
+  echo $descbits[2] . $descbits[3];
+    if ($descbits[2] == 'Confirmation' && $descbits[3] == 'Statement') {
         $desc = $org . $descbits[2] . $descbits[3];
     }
 }
