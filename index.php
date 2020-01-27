@@ -51,17 +51,21 @@ $desc = $_GET['desc'];
 $descbits = explode(" ",$desc);
 $originaldesc = $_GET['desc'];
 $org = $_GET['org'];
+$ticketno = $_GET['ticketno'];
 
 if ($org == 'eBay') {
     if ($descbits[1] == 'sold') {
         $desc = $org . $descbits[1];
     }
   }
-elseif ($org == 'Companies House') {
-    if ($descbits[2] == 'Confirmation' && $descbits[3] == 'Statement') {
-        $desc = $org . $descbits[2] . $descbits[3];
-    }
-}
+	elseif ($org == 'Companies House') {
+	    if ($descbits[2] == 'Confirmation' && $descbits[3] == 'Statement') {
+	        $desc = $org . $descbits[2] . $descbits[3];
+	    }
+	}
+	elseif (($descbits[2] == 'PCs]:') && ($descbits[3] == 'New') && ($descbits[4] == 'order')) {
+	        $desc = 'woosale';
+	}
 //    $desc = trim(substr($desc,0,strpos($desc, ' ')));
 
 //$desc = preg_replace('/\s+/', '', $desc);
