@@ -105,9 +105,10 @@ if($httpCode == 404) {
 } else {
 //    header( 'Location: ' . $desc,true,301 );
     header( 'refresh:10; url=' . $desc );
+    header("Location: " . $desc );
     echo 'Starting your new process in a mo.<br><b>- Please activate the Share link and copy it into the ticket.<br>- Please rename the process to include the ticket name</b><br>';
     echo $originaldesc . '<br>';
-    echo $org;
+    echo $org . '<br>';
     echo '<a href=' . $desc . '>Click here</a> if you are not redirected.';
 }
 
