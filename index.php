@@ -24,7 +24,6 @@ if ($org == 'eBay') {
         $desc = $org . $descbits[1];
     }
 elseif ($org == 'Companies House') {
-  echo $descbits[2] . $descbits[3];
     if ($descbits[2] == 'Confirmation' && $descbits[3] == 'Statement') {
         $desc = $org . $descbits[2] . $descbits[3];
     }
@@ -58,10 +57,13 @@ if($httpCode == 404) {
         $row = explode(' ',$row);
         foreach($row as $cell){
           echo '<td>';
-          echo $descbitsid++;
+          echo $descbitsid;
           echo '</td>';
           echo '<td>';
           echo $cell;
+          echo '</td>';
+          echo '<td>';
+          echo $descbits[$descbitsid++];
           echo '</td>';
         }
         echo '</tr>';
