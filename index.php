@@ -24,9 +24,9 @@
 <nav class="navigation">
 	<section class="container">
 		<span class="navigation-title">
-			<img class="img" src="Logo-Square-128px.png">
+			<img class="img" src="//www.njpcstatus.co.uk/Logo-Square-128px.png">
 			<h1 class="title">Not Just PCs</h1>
-			<h2 class="title">Service Status</h2>
+			<h2 class="title">Process Finder</h2>
 		</span>
 	</section>
 </nav>
@@ -117,7 +117,7 @@ curl_close($handle);
 </div>
 <footer class="footer">
 	<div class="container">
-		<img height="64px" src="Logo-Square-128px.png" />
+		<img height="64px" src="//www.njpcstatus.co.uk/Logo-Square-128px.png" />
 		<span class="text-muted">Not Just PCs</span>
 	</div>
 </footer>
