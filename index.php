@@ -23,13 +23,13 @@ if ($org == 'eBay') {
     if ($descbits[1] == 'sold') {
         $desc = $org . $descbits[1];
     }
+  }
 elseif ($org == 'Companies House') {
     if ($descbits[2] == 'Confirmation' && $descbits[3] == 'Statement') {
         $desc = $org . $descbits[2] . $descbits[3];
     }
 }
 //    $desc = trim(substr($desc,0,strpos($desc, ' ')));
-}
 
 //$desc = preg_replace('/\s+/', '', $desc);
 //$desc = strtolower($desc);
@@ -57,14 +57,14 @@ if($httpCode == 404) {
         $row = explode(' ',$row);
         foreach($row as $cell){
           echo '<td>';
-          echo $descbitsid;
+          echo $descbitsid++;
           echo '</td>';
           echo '<td>';
           echo $cell;
           echo '</td>';
-          echo '<td>';
+          /*echo '<td>';
           echo $descbits[$descbitsid++];
-          echo '</td>';
+          echo '</td>'; */
         }
         echo '</tr>';
     }
