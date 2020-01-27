@@ -54,9 +54,10 @@ if($httpCode == 404) {
     foreach($descbits as $row){
         echo '<tr>';
         $row = explode(' ',$row);
+        $descbitsid = 0;
         foreach($row as $cell){
           echo '<td>';
-          echo array_search($row, array_keys($descbits));
+          echo $descbitsid++;
           echo '</td>';
           echo '<td>';
           echo $cell;
