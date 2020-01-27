@@ -1,4 +1,37 @@
-<h1>Process Finder</h1>
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="cache-control" content="max-age=0" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="expires" content="0" />
+	<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Not Just PCs - Process Finder</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+<!-- styles -->
+	<link rel="stylesheet" href="//www.njpcstatus.co.uk/style.css?v=20200127">
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="//stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<!-- scripts -->
+	<script src="//cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
+</head>
+<body>
+<nav class="navigation">
+	<section class="container">
+		<span class="navigation-title">
+			<img class="img" src="Logo-Square-128px.png">
+			<h1 class="title">Not Just PCs</h1>
+			<h2 class="title">Service Status</h2>
+		</span>
+	</section>
+</nav>
+<div class="container" id="main">
+
 <?php
 
 function seoUrl($string) {
@@ -81,3 +114,12 @@ curl_close($handle);
 
 /* Handle $response here. */
 ?>
+</div>
+<footer class="footer">
+	<div class="container">
+		<img height="64px" src="Logo-Square-128px.png" />
+		<span class="text-muted">Not Just PCs</span>
+	</div>
+</footer>
+</body>
+</html>
