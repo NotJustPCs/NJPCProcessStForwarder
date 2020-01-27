@@ -15,16 +15,15 @@ function seoUrl($string) {
 
 $urlroot = 'http://go.njpc.it/prst-';
 $desc = $_GET['desc'];
+$descbits = explode(" ",$desc);
 $originaldesc = $_GET['desc'];
 $org = $_GET['org'];
 
 if ($org == 'eBay') {
-    $descbits = explode(" ",$desc);
     if ($descbits[1] == 'sold') {
         $desc = $org . $descbits[1];
     }
 elseif ($org == 'Companies House') {
-    $descbits = explode(" ",$desc);
     if ($descbits[2] == 'sold' && $descbits[3] == 'sold') {
         $desc = $org . $descbits[2] . $descbits[3];
     }
@@ -48,9 +47,21 @@ $response = curl_exec($handle);
 $httpCode = curl_getinfo($handle, CURLINFO_HTTP_CODE);
 if($httpCode == 404) {
     echo 'There is no process for this yet. Maybe you should <a target="_blank" href="https://app.process.st/templates/Create-new-Process-uXELTkfN1s-Rrhe6UZxH-w/checklists/run" title="Learn how to add a simple process to this tool">make one</a>?<br>';
+    echo '<strong>Organisation of Ticket: </strong>' . $org . '<br>';
     echo '<strong>Original Ticket Description: </strong>' . $originaldesc . '<br>';
-    echo $desc . '<br>';
-    echo $org;
+    echo '<strong>Cleaned Ticket Description: </strong>' . $desc . '<br>';
+    echo '<strong>Word numbers of Ticket Description: </strong><br><table>';
+    foreach($data as $row){
+        echo '<tr>';
+        $row = explode(' ',$row);
+        foreach($row as $cell){
+            echo '<td>';
+            echo $cell;
+            echo '</td>';
+        }
+        echo '</tr>';
+    }
+    echo '</table>';
 } else {
 //    header( 'Location: ' . $desc,true,301 );
     header( 'refresh:10; url=' . $desc );
