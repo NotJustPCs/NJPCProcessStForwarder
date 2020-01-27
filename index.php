@@ -108,7 +108,7 @@ if($httpCode == 404) {
     echo 'Starting your new process in a mo.<br><b>- Please activate the Share link and copy it into the ticket.<br>- Please rename the process to include the ticket name</b><br>';
     echo $originaldesc . '<br>';
     echo $org;
-    echo '<a href=' . $desc . '>Click here</a> if you are not redirected.'
+    echo '<a href=' . $desc . '>Click here</a> if you are not redirected.';
 }
 
 curl_close($handle);
