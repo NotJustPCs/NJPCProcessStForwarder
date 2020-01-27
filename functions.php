@@ -3,6 +3,7 @@
 function redirect($url)
 {
     $string = '<script type="text/javascript">';
+    $string .= 'await sleep(10000);';
     $string .= 'window.location = "' . $url . '"';
     $string .= '</script>';
 
