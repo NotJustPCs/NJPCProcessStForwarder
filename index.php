@@ -65,12 +65,12 @@ curl_setopt($handle, CURLOPT_FOLLOWLOCATION, true);
 $response = curl_exec($handle);
 
 $httpCode = curl_getinfo($handle, CURLINFO_HTTP_CODE);
-echo '<strong>Organisation of Ticket: </strong>' . $org . '<br>';
+echo '<i class="fa fa-building" aria-hidden="true"></i> <strong>Organisation of Ticket: </strong>' . $org . '<br>';
 if($httpCode == 404) {
-	echo 'There is no process for this yet. Maybe you should <a target="_blank" href="https://app.process.st/templates/Create-new-Process-uXELTkfN1s-Rrhe6UZxH-w/checklists/run" title="Learn how to add a simple process to this tool">make one</a>?<br>';
-	echo '<strong>Original Ticket Description: </strong>' . $originaldesc . '<br>';
-	echo '<strong>Process URL tested: </strong>' . $desc . '<br>';
-	echo '<strong>Word numbers of Ticket Description: </strong><br><table>';
+	echo '<i class="fa fa-list-alt" aria-hidden="true"></i> There is no process for this yet. Maybe you should <a target="_blank" href="https://app.process.st/templates/Create-new-Process-uXELTkfN1s-Rrhe6UZxH-w/checklists/run" title="Learn how to add a simple process to this tool">make one</a>?<br>';
+	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Description: </strong>' . $originaldesc . '<br>';
+	echo '<i class="fa fa-file-code-o" aria-hidden="true"></i> <strong>Process URL tested: </strong>' . $desc . '<br>';
+	echo '<i class="fa fa-list-ol" aria-hidden="true"></i> <strong>Word numbers of Ticket Description: </strong><br><table>';
 	$descbitsid = 0;
 	foreach($descbits as $row){
 	  echo '<tr>';
@@ -90,10 +90,11 @@ if($httpCode == 404) {
 } else {
 	header( 'refresh:10; url=' . $desc );
 	header("Location: " . $desc );
-	echo 'Starting your new process in a mo.<br><b>- Please activate the Share link and copy it into the ticket.<br>- Please rename the process to include the ticket name</b><br>';
-	echo $originaldesc . '<br>';
-	echo $org . '<br>';
-	echo '<a href=' . $desc . '>Click here</a> if you are not redirected.';
+	echo '<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Starting your new process in a mo.<br><b>- Please activate the Share link and copy it into the ticket.<br>- Please rename the process to include the ticket name</b><br>';
+	echo '<i class="fa fa-building" aria-hidden="true"></i> <strong>Organisation of Ticket: </strong>' . $org . '<br>';
+	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Description: </strong>' . $originaldesc . '<br>';
+	echo '<i class="fa fa-file-code-o" aria-hidden="true"></i> <strong>Process URL: </strong>' . $desc . '<br>';
+	echo '<i class="fa fa-play" aria-hidden="true"></i> <a href=' . $desc . '>Click here</a> to start the process if you are not redirected.';
 }
 
 curl_close($handle);
