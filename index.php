@@ -86,6 +86,7 @@ if($httpCode == 404) {
 	  echo '</tr>';
 	}
 	echo '</table>';
+	echo '<a href="javascript:location.reload(true)"><i class="fa fa-refresh"></i> Try again</a>.';
 } else {
 	header( 'refresh:10; url=' . $desc );
 	header("Location: " . $desc );
