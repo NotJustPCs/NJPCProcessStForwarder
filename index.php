@@ -48,10 +48,8 @@ if ($org == 'eBay') {
       $desc = $org . $descbits[1];
 	  }
   }
-	elseif ($org == 'Companies House') {
-    if ($descbits[2] == 'Confirmation' && $descbits[3] == 'Statement') {
-      $desc = $org . $descbits[2] . $descbits[3];
-    }
+	elseif (($org == 'Companies House') && ($descbits[2] == 'Confirmation') && ($descbits[3] == 'Statement')){
+    $desc = $org . $descbits[2] . $descbits[3];
 	}
 	elseif (($descbits[2] == 'PCs]:') && ($descbits[3] == 'New') && ($descbits[4] == 'order')) {
   	$desc = 'woosale';
