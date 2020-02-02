@@ -43,10 +43,8 @@ $originaldesc = $_GET['desc'];
 $org = $_GET['org'];
 $ticketno = $_GET['ticketno'];
 
-if ($org == 'eBay') {
-	  if ($descbits[1] == 'sold') {
-      $desc = $org . $descbits[1];
-	  }
+if (($org == 'eBay') && ($descbits[1] == 'sold')) {
+    $desc = $org . $descbits[1];
   }
 	elseif (($org == 'Companies House') && ($descbits[2] == 'Confirmation') && ($descbits[3] == 'Statement')){
     $desc = $org . $descbits[2] . $descbits[3];
@@ -69,32 +67,32 @@ $response = curl_exec($handle);
 $httpCode = curl_getinfo($handle, CURLINFO_HTTP_CODE);
 echo '<strong>Organisation of Ticket: </strong>' . $org . '<br>';
 if($httpCode == 404) {
-    echo 'There is no process for this yet. Maybe you should <a target="_blank" href="https://app.process.st/templates/Create-new-Process-uXELTkfN1s-Rrhe6UZxH-w/checklists/run" title="Learn how to add a simple process to this tool">make one</a>?<br>';
-    echo '<strong>Original Ticket Description: </strong>' . $originaldesc . '<br>';
-    echo '<strong>Cleaned Ticket Description: </strong>' . $desc . '<br>';
-    echo '<strong>Word numbers of Ticket Description: </strong><br><table>';
-    $descbitsid = 0;
-    foreach($descbits as $row){
-        echo '<tr>';
-        $row = explode(' ',$row);
-        foreach($row as $cell){
-          echo '<td>';
-          echo $descbitsid++;
-          echo '</td>';
-          echo '<td>';
-          echo $cell;
-          echo '</td>';
-        }
-        echo '</tr>';
-    }
-    echo '</table>';
+	echo 'There is no process for this yet. Maybe you should <a target="_blank" href="https://app.process.st/templates/Create-new-Process-uXELTkfN1s-Rrhe6UZxH-w/checklists/run" title="Learn how to add a simple process to this tool">make one</a>?<br>';
+	echo '<strong>Original Ticket Description: </strong>' . $originaldesc . '<br>';
+	echo '<strong>Cleaned Ticket Description: </strong>' . $desc . '<br>';
+	echo '<strong>Word numbers of Ticket Description: </strong><br><table>';
+	$descbitsid = 0;
+	foreach($descbits as $row){
+	  echo '<tr>';
+	  $row = explode(' ',$row);
+	  foreach($row as $cell){
+	    echo '<td>';
+	    echo $descbitsid++;
+	    echo '</td>';
+	    echo '<td>';
+	    echo $cell;
+	    echo '</td>';
+	  }
+	  echo '</tr>';
+	}
+	echo '</table>';
 } else {
-    header( 'refresh:10; url=' . $desc );
-    header("Location: " . $desc );
-    echo 'Starting your new process in a mo.<br><b>- Please activate the Share link and copy it into the ticket.<br>- Please rename the process to include the ticket name</b><br>';
-    echo $originaldesc . '<br>';
-    echo $org . '<br>';
-    echo '<a href=' . $desc . '>Click here</a> if you are not redirected.';
+	header( 'refresh:10; url=' . $desc );
+	header("Location: " . $desc );
+	echo 'Starting your new process in a mo.<br><b>- Please activate the Share link and copy it into the ticket.<br>- Please rename the process to include the ticket name</b><br>';
+	echo $originaldesc . '<br>';
+	echo $org . '<br>';
+	echo '<a href=' . $desc . '>Click here</a> if you are not redirected.';
 }
 
 curl_close($handle);
