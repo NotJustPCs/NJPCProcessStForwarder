@@ -44,37 +44,34 @@ $org = $_GET['org'];
 $ticketno = $_GET['ticketno'];
 
 if ($org == 'eBay') {
-    if ($descbits[1] == 'sold') {
-        $desc = $org . $descbits[1];
-    }
+	  if ($descbits[1] == 'sold') {
+      $desc = $org . $descbits[1];
+	  }
   }
 	elseif ($org == 'Companies House') {
-	    if ($descbits[2] == 'Confirmation' && $descbits[3] == 'Statement') {
-	        $desc = $org . $descbits[2] . $descbits[3];
-	    }
+    if ($descbits[2] == 'Confirmation' && $descbits[3] == 'Statement') {
+      $desc = $org . $descbits[2] . $descbits[3];
+    }
 	}
 	elseif (($descbits[2] == 'PCs]:') && ($descbits[3] == 'New') && ($descbits[4] == 'order')) {
-	        $desc = 'woosale';
+  	$desc = 'woosale';
 	}
-//    $desc = trim(substr($desc,0,strpos($desc, ' ')));
+	elseif (($org == 'Not Just PCs') && ($descbits[1] == '[GANDI]') && ($descbits[2] == 'Invoice')) {
+		$desc = preg_replace('/[0-9]+/', '', $desc);
+	}
 
-//$desc = preg_replace('/\s+/', '', $desc);
-//$desc = strtolower($desc);
 $desc = $urlroot . seoUrl($desc);
 
 $handle = curl_init($desc);
 curl_setopt($handle,  CURLOPT_RETURNTRANSFER, TRUE);
 curl_setopt($handle, CURLOPT_FOLLOWLOCATION, true);
 
-
-/* Get the HTML or whatever is linked in $url. */
 $response = curl_exec($handle);
 
-/* Check for 404 (file not found). */
 $httpCode = curl_getinfo($handle, CURLINFO_HTTP_CODE);
+echo '<strong>Organisation of Ticket: </strong>' . $org . '<br>';
 if($httpCode == 404) {
     echo 'There is no process for this yet. Maybe you should <a target="_blank" href="https://app.process.st/templates/Create-new-Process-uXELTkfN1s-Rrhe6UZxH-w/checklists/run" title="Learn how to add a simple process to this tool">make one</a>?<br>';
-    echo '<strong>Organisation of Ticket: </strong>' . $org . '<br>';
     echo '<strong>Original Ticket Description: </strong>' . $originaldesc . '<br>';
     echo '<strong>Cleaned Ticket Description: </strong>' . $desc . '<br>';
     echo '<strong>Word numbers of Ticket Description: </strong><br><table>';
@@ -89,15 +86,11 @@ if($httpCode == 404) {
           echo '<td>';
           echo $cell;
           echo '</td>';
-          /*echo '<td>';
-          echo $descbits[$descbitsid++];
-          echo '</td>'; */
         }
         echo '</tr>';
     }
     echo '</table>';
 } else {
-//    header( 'Location: ' . $desc,true,301 );
     header( 'refresh:10; url=' . $desc );
     header("Location: " . $desc );
     echo 'Starting your new process in a mo.<br><b>- Please activate the Share link and copy it into the ticket.<br>- Please rename the process to include the ticket name</b><br>';
@@ -108,7 +101,6 @@ if($httpCode == 404) {
 
 curl_close($handle);
 
-/* Handle $response here. */
 ?>
 </div>
 <footer class="footer">
