@@ -69,7 +69,7 @@ echo '<strong>Organisation of Ticket: </strong>' . $org . '<br>';
 if($httpCode == 404) {
 	echo 'There is no process for this yet. Maybe you should <a target="_blank" href="https://app.process.st/templates/Create-new-Process-uXELTkfN1s-Rrhe6UZxH-w/checklists/run" title="Learn how to add a simple process to this tool">make one</a>?<br>';
 	echo '<strong>Original Ticket Description: </strong>' . $originaldesc . '<br>';
-	echo '<strong>Cleaned Ticket Description: </strong>' . $desc . '<br>';
+	echo '<strong>Process URL tested: </strong>' . $desc . '<br>';
 	echo '<strong>Word numbers of Ticket Description: </strong><br><table>';
 	$descbitsid = 0;
 	foreach($descbits as $row){
