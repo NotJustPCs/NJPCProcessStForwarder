@@ -65,9 +65,9 @@ curl_setopt($handle, CURLOPT_FOLLOWLOCATION, true);
 $response = curl_exec($handle);
 
 $httpCode = curl_getinfo($handle, CURLINFO_HTTP_CODE);
-echo '<i class="fa fa-building" aria-hidden="true"></i> <strong>Organisation of Ticket: </strong>' . $org . '<br>';
 if($httpCode == 404) {
 	echo '<i class="fa fa-list-alt" aria-hidden="true"></i> There is no process for this yet. Maybe you should <a target="_blank" href="https://app.process.st/templates/Create-new-Process-uXELTkfN1s-Rrhe6UZxH-w/checklists/run" title="Learn how to add a simple process to this tool">make one</a>?<br>';
+	echo '<i class="fa fa-building" aria-hidden="true"></i> <strong>Organisation of Ticket: </strong>' . $org . '<br>';
 	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Description: </strong>' . $originaldesc . '<br>';
 	echo '<i class="fa fa-file-code-o" aria-hidden="true"></i> <strong>Process URL tested: </strong>' . $desc . '<br>';
 	echo '<i class="fa fa-list-ol" aria-hidden="true"></i> <strong>Word numbers of Ticket Description: </strong><br><table>';
