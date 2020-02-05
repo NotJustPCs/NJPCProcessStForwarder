@@ -56,10 +56,10 @@ if (($org == 'eBay') && ($descbits[1] == 'sold')) {
   	$desc = 'woosale';
 	}
 	elseif ($org == 'Not Just PCs Ltd') {
-		if (($descbits[1] == '[GANDI]') && ($descbits[2] == 'Invoice')) {
+		if (($descbits[0] == '[GANDI]') && ($descbits[1] == 'Invoice')) {
 			$desc = preg_replace('/[0-9]+/', '', $desc);
 		}
-		elseif ($descbits[0] == '[mail.njpc.uk]') {
+		elseif (strpos($descbits[0],'njpc.uk]') !== false) {
 			if ($descbits[1] == 'DISKWARN') {
 				$desc = preg_replace('/[0-9]+/', '', $desc);
 			}
