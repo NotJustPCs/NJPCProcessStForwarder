@@ -52,8 +52,15 @@ if (($org == 'eBay') && ($descbits[1] == 'sold')) {
 	elseif (($descbits[2] == 'PCs]:') && ($descbits[3] == 'New') && ($descbits[4] == 'order')) {
   	$desc = 'woosale';
 	}
-	elseif (($org == 'Not Just PCs Ltd') && ($descbits[1] == '[GANDI]') && ($descbits[2] == 'Invoice')) {
-		$desc = preg_replace('/[0-9]+/', '', $desc);
+	elseif ($org == 'Not Just PCs Ltd') {
+		if (($descbits[1] == '[GANDI]') && ($descbits[2] == 'Invoice')) {
+			$desc = preg_replace('/[0-9]+/', '', $desc);
+		}
+		elseif ($descbits[0] == '[mail.njpc.uk]') {
+			if ($descbits[1] == 'DISKWARN') {
+				$desc = preg_replace('/[0-9]+/', '', $desc);
+			}
+		}
 	}
 
 $desc = $urlroot . seoUrl($desc);
