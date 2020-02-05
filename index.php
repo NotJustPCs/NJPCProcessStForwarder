@@ -38,6 +38,9 @@ include 'functions.php';
 
 $urlroot = 'http://go.njpc.it/prst-';
 $desc = $_GET['desc'];
+if (substr($desc,0,4) == 'FW: ') {
+	$desc = substr($desc,4);
+}
 $descbits = explode(" ",$desc);
 $originaldesc = $_GET['desc'];
 $org = $_GET['org'];
