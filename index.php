@@ -55,6 +55,9 @@ if (($org == 'eBay') && ($descbits[1] == 'sold')) {
 	elseif (($descbits[2] == 'PCs]:') && ($descbits[3] == 'New') && ($descbits[4] == 'order')) {
   	$desc = 'woosale';
 	}
+	elseif (($descbits[0] == 'New') && ($descbits[1] == 'customer:') ) {
+  	$desc = 'newddcust';
+	}
 	elseif ($org == 'Not Just PCs Ltd') {
 		if (($descbits[0] == '[GANDI]') && ($descbits[1] == 'Invoice')) {
 			$desc = preg_replace('/[0-9]+/', '', $desc);
