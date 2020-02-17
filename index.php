@@ -52,6 +52,9 @@ if (($org == 'eBay') && ($descbits[1] == 'sold')) {
 	elseif (($org == 'Companies House') && ($descbits[2] == 'Confirmation') && ($descbits[3] == 'Statement')){
     $desc = $org . $descbits[2] . $descbits[3];
 	}
+	elseif ($org == 'GoCardless'){
+		$desc = preg_replace('/[0-9]+/', '', $desc);
+	}
 	elseif (($descbits[2] == 'PCs]:') && ($descbits[3] == 'New') && ($descbits[4] == 'order')) {
   	$desc = 'woosale';
 	}
