@@ -55,6 +55,11 @@ if (($org == 'eBay') && ($descbits[1] == 'sold')) {
 	elseif ($org == 'GoCardless'){
 		$desc = preg_replace('/[0-9]+/', '', $desc);
 	}
+	elseif ($org == 'Little Beach Boutique'){
+		if (($descbits[1] == 'Beach') && ($descbits[3] == 'Order') && ($descbits[5] == 'placed')) {
+			$desc = 'lbb-shopifyorder';
+		}
+	}
 	elseif (($descbits[2] == 'PCs]:') && ($descbits[3] == 'New') && ($descbits[4] == 'order')) {
   	$desc = 'woosale';
 	}
