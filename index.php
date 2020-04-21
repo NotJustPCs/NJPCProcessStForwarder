@@ -115,7 +115,6 @@ if($httpCode == 404) {
 	echo '<i class="fa fa-building" aria-hidden="true"></i> <strong>Organisation of Ticket: </strong>' . $org . '<br>';
 	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Description: </strong>' . $originaldesc . '<br>';
 	echo '<i class="fa fa-file-code-o" aria-hidden="true"></i> <strong>Process URL: </strong>' . $desc . '<br>';
-	echo $response;
 	echo '<i class="fa fa-play" aria-hidden="true"></i> <a href=' . $desc . '>Click here</a> to start the process if you are not redirected.';
 }
 
