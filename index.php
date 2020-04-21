@@ -109,7 +109,9 @@ if($httpCode == 404) {
 	echo '</table>';
 	echo '<a href="javascript:location.reload(true)"><i class="fa fa-refresh"></i> Try again</a>.';
 } else {
-	$targeturl = curl_getinfo($desc, CURLINFO_REDIRECT_URL);
+	$targeturlhandle = curl_init($desc);
+	curl_setopt($targeturlhandle, CURLOPT_FOLLOWLOCATION, true);
+	$targeturl = curl_getinfo($targeturlhandle, CURLINFO_EFFECTIVE_URL);
 	header( 'refresh:10; url=' . $desc );
 	header("Location: " . $desc );
 	echo '<i style="color:green;" class="fa fa-check" aria-hidden="true"></i> Starting your new process in a mo.<br><b>- Please activate the Share link and copy it into the ticket.<br>- Please rename the process to include the ticket name</b><br>';
