@@ -111,6 +111,7 @@ if($httpCode == 404) {
 } else {
 	$targeturlhandle = curl_init($desc);
 	curl_setopt($targeturlhandle, CURLOPT_FOLLOWLOCATION, true);
+	curl_exec($targeturlhandle);
 	$targeturl = curl_getinfo($targeturlhandle, CURLINFO_EFFECTIVE_URL);
 	header( 'refresh:10; url=' . $desc );
 	header("Location: " . $desc );
@@ -122,6 +123,7 @@ if($httpCode == 404) {
 	echo 'Test area: ' . $targeturl;
 }
 
+curl_close($targeturlhandle);
 curl_close($handle);
 
 ?>
