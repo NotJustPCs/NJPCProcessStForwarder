@@ -45,6 +45,7 @@ $descbits = explode(" ",$desc);
 $originaldesc = $_GET['desc'];
 $org = $_GET['org'];
 $ticketno = $_GET['ticketno'];
+$ticketnicename = '#' . $ticketno . ' ' . $originaldesc
 
 if (($org == 'eBay') && ($descbits[1] == 'sold')) {
     $desc = $org . $descbits[1];
@@ -89,7 +90,10 @@ $httpCode = curl_getinfo($handle, CURLINFO_HTTP_CODE);
 if($httpCode == 404) {
 	echo '<i style="color:red;" class="fa fa-times" aria-hidden="true"></i> There is no process for this yet. Maybe you should <a target="_blank" href="https://app.process.st/templates/Create-new-Process-uXELTkfN1s-Rrhe6UZxH-w/checklists/run" title="Learn how to add a simple process to this tool">make one</a>?<br>';
 	echo '<i class="fa fa-building" aria-hidden="true"></i> <strong>Organisation of Ticket: </strong>' . $org . '<br>';
+	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Number: </strong>' . $ticketno . '<br>';
 	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Description: </strong>' . $originaldesc . '<br>';
+	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Full Description: </strong>' . $ticketnicename . '<br>';
+	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Link: </strong> https://notjustpcs.zendesk.com/agent/tickets/' . $ticketno . '<br>';
 	echo '<i class="fa fa-file-code-o" aria-hidden="true"></i> <strong>Process URL tested: </strong>' . $desc . '<br>';
 	echo '<i class="fa fa-list-ol" aria-hidden="true"></i> <strong>Word numbers of Ticket Description: </strong><br><table>';
 	$descbitsid = 0;
@@ -113,10 +117,13 @@ if($httpCode == 404) {
 	curl_setopt($targeturlhandle, CURLOPT_FOLLOWLOCATION, true);
 	curl_exec($targeturlhandle);
 	$targeturl = curl_getinfo($targeturlhandle, CURLINFO_EFFECTIVE_URL);
-	$targeturlincquery = $targeturl;
+	$targeturlincquery = $targeturl . '?checklist_name=' . urlencode($ticketnicename);
 	echo '<i style="color:green;" class="fa fa-check" aria-hidden="true"></i> Starting your new process in a mo.<br><b>- Please activate the Share link and copy it into the ticket.<br>- Please rename the process to include the ticket name</b><br>';
 	echo '<i class="fa fa-building" aria-hidden="true"></i> <strong>Organisation of Ticket: </strong>' . $org . '<br>';
+	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Number: </strong>' . $ticketno . '<br>';
 	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Description: </strong>' . $originaldesc . '<br>';
+	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Full Description: </strong>' . $ticketnicename . '<br>';
+	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Link: </strong> https://notjustpcs.zendesk.com/agent/tickets/' . $ticketno . '<br>';
 	echo '<i class="fa fa-file-code-o" aria-hidden="true"></i> <strong>Short Process URL: </strong>' . $desc . '<br>';
 	echo '<i class="fa fa-file-code-o" aria-hidden="true"></i> <strong>Long Process URL: </strong>' . $targeturl . '<br>';
 	echo '<i class="fa fa-file-code-o" aria-hidden="true"></i> <strong>Full Process URL: </strong>' . $targeturlincquery . '<br>';
