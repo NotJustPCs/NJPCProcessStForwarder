@@ -117,7 +117,7 @@ if($httpCode == 404) {
 	curl_setopt($targeturlhandle, CURLOPT_FOLLOWLOCATION, true);
 	curl_exec($targeturlhandle);
 	$targeturl = curl_getinfo($targeturlhandle, CURLINFO_EFFECTIVE_URL);
-	$targeturlincquery = $targeturl . '?checklist_name=' . urlencode($ticketnicename);
+	$targeturlincquery = $targeturl;
 	echo '<i style="color:green;" class="fa fa-check" aria-hidden="true"></i> Starting your new process in a mo.<br><b>- Please activate the Share link and copy it into the ticket.<br>- Please rename the process to include the ticket name</b><br>';
 	echo '<i class="fa fa-building" aria-hidden="true"></i> <strong>Organisation of Ticket: </strong>' . $org . '<br>';
 	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Number: </strong>' . $ticketno . '<br>';
