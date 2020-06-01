@@ -113,14 +113,16 @@ if($httpCode == 404) {
 	curl_setopt($targeturlhandle, CURLOPT_FOLLOWLOCATION, true);
 	curl_exec($targeturlhandle);
 	$targeturl = curl_getinfo($targeturlhandle, CURLINFO_EFFECTIVE_URL);
-	header( 'refresh:10; url=' . $desc );
-	header("Location: " . $desc );
+	$targeturlincquery = $targeturl;
 	echo '<i style="color:green;" class="fa fa-check" aria-hidden="true"></i> Starting your new process in a mo.<br><b>- Please activate the Share link and copy it into the ticket.<br>- Please rename the process to include the ticket name</b><br>';
 	echo '<i class="fa fa-building" aria-hidden="true"></i> <strong>Organisation of Ticket: </strong>' . $org . '<br>';
 	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Description: </strong>' . $originaldesc . '<br>';
-	echo '<i class="fa fa-file-code-o" aria-hidden="true"></i> <strong>Process URL: </strong>' . $desc . '<br>';
-	echo '<i class="fa fa-play" aria-hidden="true"></i> <a href=' . $desc . '>Click here</a> to start the process if you are not redirected.<br>';
-	echo 'Test area: ' . $targeturl;
+	echo '<i class="fa fa-file-code-o" aria-hidden="true"></i> <strong>Short Process URL: </strong>' . $desc . '<br>';
+	echo '<i class="fa fa-file-code-o" aria-hidden="true"></i> <strong>Long Process URL: </strong>' . $targeturl . '<br>';
+	echo '<i class="fa fa-file-code-o" aria-hidden="true"></i> <strong>Full Process URL: </strong>' . $targeturlincquery . '<br>';
+	echo '<i class="fa fa-play" aria-hidden="true"></i> <a href=' . $targeturlincquery . '>Click here</a> to start the process if you are not redirected.<br>';
+	header( 'refresh:10; url=' . $targeturlincquery );
+	header("Location: " . $targeturlincquery );
 }
 
 curl_close($targeturlhandle);
@@ -138,5 +140,5 @@ curl_close($handle);
 </html>
 
 <?php
-	redirect($desc);
+	redirect($targeturlincquery);
 ?>
