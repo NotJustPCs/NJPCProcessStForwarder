@@ -93,7 +93,7 @@ if($httpCode == 404) {
 	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Number: </strong>' . $ticketno . '<br>';
 	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Description: </strong>' . $originaldesc . '<br>';
 	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Full Description: </strong>' . $ticketnicename . '<br>';
-	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Link: </strong> https://notjustpcs.zendesk.com/agent/tickets/' . $ticketno . '<br>';
+	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Link: </strong><a target="_blank" href="https://notjustpcs.zendesk.com/agent/tickets/">Link</a>' . $ticketno . '<br>';
 	echo '<i class="fa fa-file-code-o" aria-hidden="true"></i> <strong>Process URL tested: </strong>' . $desc . '<br>';
 	echo '<i class="fa fa-list-ol" aria-hidden="true"></i> <strong>Word numbers of Ticket Description: </strong><br><table>';
 	$descbitsid = 0;
@@ -123,10 +123,10 @@ if($httpCode == 404) {
 	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Number: </strong>' . $ticketno . '<br>';
 	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Description: </strong>' . $originaldesc . '<br>';
 	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Full Description: </strong>' . $ticketnicename . '<br>';
-	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Link: </strong> https://notjustpcs.zendesk.com/agent/tickets/' . $ticketno . '<br>';
-	echo '<i class="fa fa-file-code-o" aria-hidden="true"></i> <strong>Short Process URL: </strong>' . $desc . '<br>';
-	echo '<i class="fa fa-file-code-o" aria-hidden="true"></i> <strong>Long Process URL: </strong>' . $targeturl . '<br>';
-	echo '<i class="fa fa-file-code-o" aria-hidden="true"></i> <strong>Full Process URL: </strong>' . $targeturlincquery . '<br>';
+	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Link: </strong> <a target="_blank" href="https://notjustpcs.zendesk.com/agent/tickets/">Link</a>' . $ticketno . '<br>';
+	echo '<i class="fa fa-file-code-o" aria-hidden="true"></i> <strong>Short Process URL: </strong><a target="_blank" href="' . $desc . '">Link</a><br>';
+	echo '<i class="fa fa-file-code-o" aria-hidden="true"></i> <strong>Long Process URL: </strong><a target="_blank" href="' . $targeturl . '">Link</a><br>';
+	echo '<i class="fa fa-file-code-o" aria-hidden="true"></i> <strong>Full Process URL: </strong><a target="_blank" href="' . $targeturlincquery . '">Link</a><br>';
 	echo '<i class="fa fa-play" aria-hidden="true"></i> <a href=' . $targeturlincquery . '>Click here</a> to start the process if you are not redirected.<br>';
 	header( 'refresh:10; url=' . $targeturlincquery );
 	header("Location: " . $targeturlincquery );
