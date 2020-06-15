@@ -45,7 +45,8 @@ $descbits = explode(" ",$desc);
 $originaldesc = $_GET['desc'];
 $org = $_GET['org'];
 $ticketno = $_GET['ticketno'];
-$ticketnicename = '#' . $ticketno . ' ' . $originaldesc;
+#$ticketnicename = '#' . $ticketno . ' ' . $originaldesc;
+$ticketnicename = $ticketno . ' ' . $originaldesc;
 
 if (($org == 'eBay') && ($descbits[1] == 'sold')) {
     $desc = $org . $descbits[1];
