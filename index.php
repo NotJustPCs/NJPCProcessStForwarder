@@ -58,7 +58,8 @@ if (($org == 'eBay') && ($descbits[1] == 'sold')) {
 		$desc = preg_replace('/[0-9]+/', '', $desc);
 	}
 	elseif ($org == 'Little Beach Boutique'){
-		if (($descbits[1] == 'Beach') && ($descbits[3] == 'Order') && ($descbits[5] == 'placed')) {
+#		if (($descbits[1] == 'Beach') && ($descbits[3] == 'Order') && ($descbits[5] == 'placed')) {
+		if (($descbits[1] == 'Beach') && ($descbits[3] == 'Order')) {
 			$desc = 'lbb-shopifyorder';
 		}
 	}
