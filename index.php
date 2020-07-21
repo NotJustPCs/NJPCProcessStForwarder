@@ -66,7 +66,7 @@ if (($org == 'eBay') && ($descbits[1] == 'sold')) {
 	elseif (($descbits[2] == 'PCs]:') && ($descbits[3] == 'New') && ($descbits[4] == 'order')) {
   	$desc = 'woosale';
 	}
-	elseif (($descbits[0] == 'New') && ($descbits[1] == 'customer:') ) {
+	elseif (($descbits[0] == 'New') && ($descbits[1] == 'customer:')) {
   	$desc = 'newddcust';
 	}
 	elseif ($org == 'Not Just PCs') {
@@ -77,7 +77,7 @@ if (($org == 'eBay') && ($descbits[1] == 'sold')) {
 			if ($descbits[1] == 'DISKWARN') {
 				$desc = preg_replace('/[0-9]+/', '', $desc);
 			}
-			elseif (($descbits[2] == 'AutoSSL') && ($descbits[3] == 'reduced') ) {
+			elseif (($descbits[2] == 'AutoSSL') && ($descbits[3] == 'reduced')) {
 				$desc = 'autossl-reduced-ssl-coverage';
 			}
 		}
