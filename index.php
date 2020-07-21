@@ -77,6 +77,9 @@ if (($org == 'eBay') && ($descbits[1] == 'sold')) {
 			if ($descbits[1] == 'DISKWARN') {
 				$desc = preg_replace('/[0-9]+/', '', $desc);
 			}
+			elseif (($descbits[2] == 'AutoSSL') && ($descbits[3] == 'reduced') ) {
+				$desc = 'autossl-reduced-ssl-coverage';
+			}
 		}
 	}
 
