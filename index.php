@@ -99,7 +99,7 @@ if($httpCode == 404) {
 	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Description: </strong>' . $originaldesc . '<br>';
 	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Full Description: </strong>' . $ticketnicename . '<br>';
 	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Link: </strong><a target="_blank" href="https://notjustpcs.zendesk.com/agent/tickets/' . $ticketno . '">Link</a><br>';
-	echo '<i class="fa fa-file-code-o" aria-hidden="true"></i> <strong>Process URL tested: </strong>' . $desc . '<br>';
+	echo '<i class="fa fa-file-code-o" aria-hidden="true"></i> <strong><a target="_blank" href="https://go.njpc.it/shorties">Process URL</a> tested: </strong>' . $desc . '<br>';
 	echo '<i class="fa fa-list-ol" aria-hidden="true"></i> <strong>Word numbers of Ticket Description: </strong><br><table>';
 	$descbitsid = 0;
 	foreach($descbits as $row){
@@ -123,7 +123,7 @@ if($httpCode == 404) {
 	curl_exec($targeturlhandle);
 	$targeturl = curl_getinfo($targeturlhandle, CURLINFO_EFFECTIVE_URL);
 	$targeturlincquery = $targeturl . '?checklist_name=' . urlencode($ticketnicename);
-	echo '<i style="color:green;" class="fa fa-check" aria-hidden="true"></i> Starting your new process in a mo.<br><b>- Please activate the Share link and copy it into the ticket.</b><br>';
+	echo '<i style="color:green;" class="fa fa-check" aria-hidden="true"></i> Starting your new process in a mo.<br><b style="color:red">- Please activate the Share link and copy it into the ticket.</b><br>';
 	echo '<i class="fa fa-building" aria-hidden="true"></i> <strong>Organisation of Ticket: </strong>' . $org . '<br>';
 	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Number: </strong>' . $ticketno . '<br>';
 	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Description: </strong>' . $originaldesc . '<br>';
