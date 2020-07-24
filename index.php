@@ -73,15 +73,15 @@ if (($org == 'eBay') && ($descbits[1] == 'sold')) {
 		if (($descbits[0] == '[GANDI]') && ($descbits[1] == 'Invoice')) {
 			$desc = preg_replace('/[0-9]+/', '', $desc);
 		}
+		elseif (($descbits[3] == 'review') && ($descbits[11] == 'Business')) {
+			$desc = 'newnjpcreview';
+		}
 		elseif (strpos($descbits[0],'njpc.uk]') !== false) {
 			if ($descbits[1] == 'DISKWARN') {
 				$desc = preg_replace('/[0-9]+/', '', $desc);
 			}
 			elseif (($descbits[2] == 'AutoSSL') && ($descbits[3] == 'reduced')) {
 				$desc = 'autossl-reduced-ssl-coverage';
-			}
-			elseif (($descbits[3] == 'review') && ($descbits[11] == 'Business')) {
-				$desc = 'newnjpcreview';
 			}
 		}
 	}
