@@ -55,6 +55,7 @@ if (($org == 'eBay') && ($descbits[1] == 'sold')) {
     $desc = $org . $descbits[2] . $descbits[3];
 	}
 	elseif ($org == 'GoCardless'){
+		echo 'ORGMATCH';
 		if (($descbits[0] == 'New') && ($descbits[1] == 'customer:')) {
 	  	$desc = 'newddcust';
 		}
