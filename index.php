@@ -48,7 +48,6 @@ $ticketno = $_GET['ticketno'];
 #$ticketnicename = '#' . $ticketno . ' ' . $originaldesc;
 $ticketnicename = $ticketno . ' ' . $originaldesc;
 
-echo 'HERE1';
 if (($org == 'eBay') && ($descbits[1] == 'sold')) {
     $desc = $org . $descbits[1];
   }
