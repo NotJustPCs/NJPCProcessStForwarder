@@ -55,7 +55,10 @@ if (($org == 'eBay') && ($descbits[1] == 'sold')) {
     $desc = $org . $descbits[2] . $descbits[3];
 	}
 	elseif ($org == 'GoCardless'){
-		$desc = preg_replace('/[0-9]+/', '', $desc);
+		elseif (($descbits[0] == 'New') && ($descbits[1] == 'customer:')) {
+	  	$desc = 'newddcust';
+		}
+#		$desc = preg_replace('/[0-9]+/', '', $desc);
 	}
 	elseif ($org == 'Little Beach Boutique'){
 #		if (($descbits[1] == 'Beach') && ($descbits[3] == 'Order') && ($descbits[5] == 'placed')) {
@@ -65,9 +68,6 @@ if (($org == 'eBay') && ($descbits[1] == 'sold')) {
 	}
 	elseif (($descbits[2] == 'PCs]:') && ($descbits[3] == 'New') && ($descbits[4] == 'order')) {
   	$desc = 'woosale';
-	}
-	elseif (($descbits[0] == 'New') && ($descbits[1] == 'customer:')) {
-  	$desc = 'newddcust';
 	}
 	elseif ($org == 'Not Just PCs') {
 		if (($descbits[0] == '[GANDI]') && ($descbits[1] == 'Invoice')) {
