@@ -80,6 +80,9 @@ if (($org == 'eBay') && ($descbits[1] == 'sold')) {
 			elseif (($descbits[2] == 'AutoSSL') && ($descbits[3] == 'reduced')) {
 				$desc = 'autossl-reduced-ssl-coverage';
 			}
+			elseif (($descbits[3] == 'review') && ($descbits[11] == 'Business')) {
+				$desc = 'newnjpcreview';
+			}
 		}
 	}
 
