@@ -65,9 +65,11 @@ if (($org == 'eBay') && ($descbits[1] == 'sold')) {
 	}
 	elseif (($descbits[0] == 'New') && ($descbits[1] == 'customer:')) {
   	$desc = 'newddcust';
+		echo 'NEWCUST';
 	}
 	elseif ($org == 'GoCardless'){
 		$desc = preg_replace('/[0-9]+/', '', $desc);
+		echo 'ORGMATCH';
 	}
 	elseif ($org == 'Not Just PCs') {
 		if (($descbits[0] == '[GANDI]') && ($descbits[1] == 'Invoice')) {
