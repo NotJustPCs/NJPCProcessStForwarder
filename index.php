@@ -47,6 +47,10 @@ $org = $_GET['org'];
 $ticketno = $_GET['ticketno'];
 #$ticketnicename = '#' . $ticketno . ' ' . $originaldesc;
 $ticketnicename = $ticketno . ' ' . $originaldesc;
+$ticketquerystring = '?checklist_name=' . urlencode($ticketnicename);
+$everythingprocesslink = 'https://app.process.st/templates/The-Everything-Process-iRNWttFAKahlKrFHxklORg/checklists/run' . $ticketquerystring;
+$processprocesslink = 'https://app.process.st/templates/Create-new-Process-uXELTkfN1s-Rrhe6UZxH-w/checklists/run' . $ticketquerystring;
+
 
 if (($org == 'eBay') && ($descbits[1] == 'sold')) {
     $desc = $org . $descbits[1];
@@ -125,7 +129,7 @@ if($httpCode == 404) {
 	curl_setopt($targeturlhandle, CURLOPT_FOLLOWLOCATION, true);
 	curl_exec($targeturlhandle);
 	$targeturl = curl_getinfo($targeturlhandle, CURLINFO_EFFECTIVE_URL);
-	$targeturlincquery = $targeturl . '?checklist_name=' . urlencode($ticketnicename);
+	$targeturlincquery = $targeturl . $ticketquerystring;
 	echo '<i style="color:green;" class="fa fa-check" aria-hidden="true"></i> Starting your new process in a mo.<br><b style="color:red">- Please activate the Share link and copy it into the ticket.</b><br>';
 	echo '<i class="fa fa-building" aria-hidden="true"></i> <strong>Organisation of Ticket: </strong>' . $org . '<br>';
 	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Number: </strong>' . $ticketno . '<br>';
