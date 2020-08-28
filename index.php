@@ -50,6 +50,7 @@ $ticketnicename = $ticketno . ' ' . $originaldesc;
 $ticketquerystring = '?checklist_name=' . urlencode($ticketnicename);
 $everythingprocesslink = 'https://app.process.st/templates/The-Everything-Process-iRNWttFAKahlKrFHxklORg/checklists/run' . $ticketquerystring;
 $processprocesslink = 'https://app.process.st/templates/Create-new-Process-uXELTkfN1s-Rrhe6UZxH-w/checklists/run' . $ticketquerystring;
+$remotecaseprocesslink = 'https://app.process.st/templates/New-Remote-Service-Case-Windows-jkMkEdwvfgI3S3gBbPNBWw/checklists/run' . $ticketquerystring;
 
 
 if (($org == 'eBay') && ($descbits[1] == 'sold')) {
@@ -100,8 +101,8 @@ $response = curl_exec($handle);
 
 $httpCode = curl_getinfo($handle, CURLINFO_HTTP_CODE);
 if($httpCode == 404) {
-	echo '<i style="color:red;" class="fa fa-times" aria-hidden="true"></i> There is no process for this yet. Maybe you should <a target="_blank" href="https://app.process.st/templates/Create-new-Process-uXELTkfN1s-Rrhe6UZxH-w/checklists/run" title="Learn how to add a simple process to this tool">make one</a>?<br>';
-	echo '<i class="fa fa-building" aria-hidden="true"></i> <strong>Organisation of Ticket: </strong>' . $org . '<br>';
+	echo '<i style="color:red;" class="fa fa-times" aria-hidden="true"></i> There is no process for this yet. Maybe you should <a target="_blank" href="' . $processprocesslink . '" title="Learn how to add a simple process to this tool">make one</a>?<br>';
+	echo '<i class="fa fa-list" aria-hidden="true"></i> <strong>Generic Processes: </strong> The primary generic processes are often relevant, too. <a href="' . $everythingprocesslink . '" target="_blank">Launch the Everything Process</a> or <a href="' . $remotecaseprocesslink . '" target="_blank">Launch the Remote Session Process</a>.<br>';
 	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Number: </strong>' . $ticketno . '<br>';
 	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Description: </strong>' . $originaldesc . '<br>';
 	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Full Description: </strong>' . $ticketnicename . '<br>';
@@ -131,6 +132,7 @@ if($httpCode == 404) {
 	$targeturl = curl_getinfo($targeturlhandle, CURLINFO_EFFECTIVE_URL);
 	$targeturlincquery = $targeturl . $ticketquerystring;
 	echo '<i style="color:green;" class="fa fa-check" aria-hidden="true"></i> Starting your new process in a mo.<br><b style="color:red">- Please activate the Share link and copy it into the ticket.</b><br>';
+	echo '<i class="fa fa-list" aria-hidden="true"></i> <strong>Generic Processes: </strong> The primary generic processes are often relevant, too. <a href="' . $everythingprocesslink . '" target="_blank">Launch the Everything Process</a> or <a href="' . $remotecaseprocesslink . '" target="_blank">Launch the Remote Session Process</a>.<br>';
 	echo '<i class="fa fa-building" aria-hidden="true"></i> <strong>Organisation of Ticket: </strong>' . $org . '<br>';
 	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Number: </strong>' . $ticketno . '<br>';
 	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Description: </strong>' . $originaldesc . '<br>';
