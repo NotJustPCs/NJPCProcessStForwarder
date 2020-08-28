@@ -103,6 +103,7 @@ $httpCode = curl_getinfo($handle, CURLINFO_HTTP_CODE);
 if($httpCode == 404) {
 	echo '<i style="color:red;" class="fa fa-times" aria-hidden="true"></i> There is no process for this yet. Maybe you should <a target="_blank" href="' . $processprocesslink . '" title="Learn how to add a simple process to this tool">make one</a>?<br>';
 	echo '<i class="fa fa-list" aria-hidden="true"></i> <strong>Generic Processes: </strong> The primary generic processes are often relevant, too. <a href="' . $everythingprocesslink . '" target="_blank">Launch the Everything Process</a> or <a href="' . $remotecaseprocesslink . '" target="_blank">Launch the Remote Session Process</a>.<br>';
+	echo '<i class="fa fa-building" aria-hidden="true"></i> <strong>Organisation of Ticket: </strong>' . $org . '<br>';
 	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Number: </strong>' . $ticketno . '<br>';
 	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Description: </strong>' . $originaldesc . '<br>';
 	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Full Description: </strong>' . $ticketnicename . '<br>';
@@ -142,6 +143,7 @@ if($httpCode == 404) {
 	echo '<i class="fa fa-file-code-o" aria-hidden="true"></i> <strong>Long Process URL: </strong><a target="_blank" href="' . $targeturl . '">Link</a><br>';
 	echo '<i class="fa fa-file-code-o" aria-hidden="true"></i> <strong>Full Process URL: </strong><a target="_blank" href="' . $targeturlincquery . '">Link</a><br>';
 	echo '<i class="fa fa-play" aria-hidden="true"></i> <a href=' . $targeturlincquery . '>Click here</a> to start the process if you are not redirected.<br>';
+	echo '<i class="fa fa-list" aria-hidden="true"></i> <strong>Generic Processes: </strong> The primary generic processes are often relevant, too. <a href="' . $everythingprocesslink . '" target="_blank">Launch the Everything Process</a> or <a href="' . $remotecaseprocesslink . '" target="_blank">Launch the Remote Session Process</a>.<br>';
 	header( 'refresh:10; url=' . $targeturlincquery );
 	header("Location: " . $targeturlincquery );
 }
