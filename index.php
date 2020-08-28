@@ -133,7 +133,6 @@ if($httpCode == 404) {
 	$targeturl = curl_getinfo($targeturlhandle, CURLINFO_EFFECTIVE_URL);
 	$targeturlincquery = $targeturl . $ticketquerystring;
 	echo '<i style="color:green;" class="fa fa-check" aria-hidden="true"></i> Starting your new process in a mo.<br><b style="color:red">- Please activate the Share link and copy it into the ticket.</b><br>';
-	echo '<i class="fa fa-list" aria-hidden="true"></i> <strong>Generic Processes: </strong> The primary generic processes are often relevant, too. <a href="' . $everythingprocesslink . '" target="_blank">Launch the Everything Process</a> or <a href="' . $remotecaseprocesslink . '" target="_blank">Launch the Remote Session Process</a>.<br>';
 	echo '<i class="fa fa-building" aria-hidden="true"></i> <strong>Organisation of Ticket: </strong>' . $org . '<br>';
 	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Number: </strong>' . $ticketno . '<br>';
 	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Description: </strong>' . $originaldesc . '<br>';
