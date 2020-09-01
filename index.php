@@ -79,7 +79,7 @@ if (($org == 'eBay') && ($descbits[1] == 'sold')) {
 			if ($descbits[1] == 'Invoice') {
 				$desc = preg_replace('/[0-9]+/', '', $desc);
 			}
-			elseif ($descbits[2] == 'Expires') {
+			elseif ($descbits[2] == 'expires') {
 				$desc = 'domain-renewal';
 			}
 		}
