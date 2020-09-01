@@ -93,6 +93,9 @@ if (($org == 'eBay') && ($descbits[1] == 'sold')) {
 			elseif (($descbits[2] == 'AutoSSL') && ($descbits[3] == 'reduced')) {
 				$desc = 'autossl-reduced-ssl-coverage';
 			}
+			elseif (($descbits[1] == 'Disk') && ($descbits[2] == 'Usage') && ($descbits[2] == 'user')) {
+				$desc = 'autossl-reduced-ssl-coverage';
+			}
 		}
 	}
 
