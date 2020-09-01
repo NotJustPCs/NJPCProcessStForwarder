@@ -77,11 +77,12 @@ if (($org == 'eBay') && ($descbits[1] == 'sold')) {
 	elseif ($org == 'Not Just PCs') {
 		if (($descbits[0] == '[GANDI]') {
 			if ($descbits[1] == 'Invoice')) {
-			$desc = preg_replace('/[0-9]+/', '', $desc);
+				$desc = preg_replace('/[0-9]+/', '', $desc);
+			}
 			elseif ($descbits[2] == 'Expires') {
 				$desc = 'domain-renewal';
 			}
-		}}
+		}
 		elseif (($descbits[3] == 'review') && ($descbits[11] == 'Business')) {
 			$desc = 'newnjpcreview';
 		}
