@@ -58,7 +58,7 @@ if ($org == 'eBay') {
 		if ($descbits[1] == 'sold') {
     	$desc = $org . 'sold';
 		}
-		elseif ($descbits[3] == '	sold:') {
+		elseif ($descbits[3] == 'sold:') {
 			$desc = $org . 'sold';
 		}
   }
