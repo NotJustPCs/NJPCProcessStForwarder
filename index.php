@@ -54,7 +54,7 @@ $processprocesslink = 'https://app.process.st/templates/Create-new-Process-uXELT
 $remotecaseprocesslink = 'https://app.process.st/templates/New-Remote-Service-Case-Windows-jkMkEdwvfgI3S3gBbPNBWw/checklists/run' . $ticketquerystring;
 
 
-if (($org == 'eBay') && (($descbits[1] == 'sold') || ($descbits[3] == '	sold:'))) {
+if (($org == 'eBay') && (($descbits[1] == 'sold') OR ($descbits[3] == '	sold:'))) {
     $desc = $org . 'sold';
   }
 	elseif (($org == 'Companies House') && ($descbits[2] == 'Confirmation') && ($descbits[3] == 'Statement')){
