@@ -61,6 +61,9 @@ if ($org == 'eBay') {
 		elseif ($descbits[3] == 'sold:') {
 			$desc = $org . 'sold';
 		}
+		elseif ($descbits[1] == 'offer') {
+			$desc = $org . 'offer';
+		}
   }
 	elseif (($org == 'Companies House') && ($descbits[2] == 'Confirmation') && ($descbits[3] == 'Statement')){
     $desc = $org . $descbits[2] . $descbits[3];
