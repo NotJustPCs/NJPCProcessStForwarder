@@ -108,7 +108,7 @@ elseif ($org == 'Not Just PCs') {
 	}
   }
 elseif ($descbits[0] == '[office.notjustpcs.co.uk][CMS]Packages') {
-	$desc='synology-packages'	
+	$desc='synology-packages';
   }
 
 $desc = $urlroot . seoUrl($desc);
