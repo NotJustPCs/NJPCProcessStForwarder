@@ -65,48 +65,51 @@ if ($org == 'eBay') {
 			$desc = $org . 'offer';
 		}
   }
-	elseif (($org == 'Companies House') && ($descbits[2] == 'Confirmation') && ($descbits[3] == 'Statement')){
+elseif (($org == 'Companies House') && ($descbits[2] == 'Confirmation') && ($descbits[3] == 'Statement')){
     $desc = $org . $descbits[2] . $descbits[3];
-	}
-	elseif ($org == 'Little Beach Boutique'){
+  }
+elseif ($org == 'Little Beach Boutique'){
 #		if (($descbits[1] == 'Beach') && ($descbits[3] == 'Order') && ($descbits[5] == 'placed')) {
-		if (($descbits[1] == 'Beach') && ($descbits[3] == 'Order')) {
-			$desc = 'lbb-shopifyorder';
-		}
+	if (($descbits[1] == 'Beach') && ($descbits[3] == 'Order')) {
+		$desc = 'lbb-shopifyorder';
 	}
-	elseif (($descbits[2] == 'PCs]:') && ($descbits[3] == 'New') && ($descbits[4] == 'order')) {
-  	$desc = 'woosale';
-	}
-	elseif (($descbits[0] == 'New') && ($descbits[1] == 'customer:')) {
+  }
+elseif (($descbits[2] == 'PCs]:') && ($descbits[3] == 'New') && ($descbits[4] == 'order')) {
+	$desc = 'woosale';
+  }
+elseif (($descbits[0] == 'New') && ($descbits[1] == 'customer:')) {
   	$desc = 'newddcust';
-	}
-	elseif ($org == 'GoCardless'){
+  }
+elseif ($org == 'GoCardless'){
 		$desc = preg_replace('/[0-9]+/', '', $desc);
-	}
-	elseif ($org == 'Not Just PCs') {
-		if ($descbits[0] == '[GANDI]') {
-			if ($descbits[1] == 'Invoice') {
-				$desc = preg_replace('/[0-9]+/', '', $desc);
-			}
-			elseif ($descbits[2] == 'expires') {
-				$desc = 'domain-renewal';
-			}
+  }
+elseif ($org == 'Not Just PCs') {
+	if ($descbits[0] == '[GANDI]') {
+		if ($descbits[1] == 'Invoice') {
+			$desc = preg_replace('/[0-9]+/', '', $desc);
 		}
-		elseif (($descbits[3] == 'review') && ($descbits[11] == 'Business')) {
-			$desc = 'newnjpcreview';
-		}
-		elseif (strpos($descbits[0],'njpc.uk]') !== false) {
-			if ($descbits[1] == 'DISKWARN') {
-				$desc = preg_replace('/[0-9]+/', '', $desc);
-			}
-			elseif (($descbits[2] == 'AutoSSL') && ($descbits[3] == 'reduced')) {
-				$desc = 'autossl-reduced-ssl-coverage';
-			}
-			elseif (($descbits[1] == 'Disk') && ($descbits[2] == 'Usage') && ($descbits[5] == 'user')) {
-				$desc = 'user-disk-usage';
-			}
+		elseif ($descbits[2] == 'expires') {
+			$desc = 'domain-renewal';
 		}
 	}
+	elseif (($descbits[3] == 'review') && ($descbits[11] == 'Business')) {
+		$desc = 'newnjpcreview';
+	}
+	elseif (strpos($descbits[0],'njpc.uk]') !== false) {
+		if ($descbits[1] == 'DISKWARN') {
+			$desc = preg_replace('/[0-9]+/', '', $desc);
+		}
+		elseif (($descbits[2] == 'AutoSSL') && ($descbits[3] == 'reduced')) {
+			$desc = 'autossl-reduced-ssl-coverage';
+		}
+		elseif (($descbits[1] == 'Disk') && ($descbits[2] == 'Usage') && ($descbits[5] == 'user')) {
+			$desc = 'user-disk-usage';
+		}
+	}
+  }
+elseif ($descbits[0] == '[office.notjustpcs.co.uk][CMS]Packages') {
+	$desc='synology-packages'	
+  }
 
 $desc = $urlroot . seoUrl($desc);
 
