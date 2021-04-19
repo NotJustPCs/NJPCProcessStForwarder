@@ -56,6 +56,8 @@ $genericprocesses = array (
   array("Everything Process","This is a process about how to run actually go about doing anything. It should be followed when you're dealing with customers, or when you're sweeping the garage, and everything in between.","https://app.process.st/templates/The-Everything-Process-iRNWttFAKahlKrFHxklORg/checklists/run"),
   array("Basic checks on a PC (Remote Service Case process)","This is a good one to run on pretty much every Windows PC we encounter","https://app.process.st/templates/New-Remote-Service-Case-Windows-jkMkEdwvfgI3S3gBbPNBWw/checklists/run")
 );
+$genericprocessescount = count($genericprocesses);
+
 
 
 if ($org == 'eBay') {
@@ -126,8 +128,14 @@ $response = curl_exec($handle);
 $httpCode = curl_getinfo($handle, CURLINFO_HTTP_CODE);
 if($httpCode == 404) {
 	echo '<i style="color:red;" class="fa fa-times" aria-hidden="true"></i> There is no process for this yet. Maybe you should <a target="_blank" href="' . $processprocesslink . '" title="Learn how to add a simple process to this tool">make one</a>?<br>';
-	echo '<i class="fa fa-list" aria-hidden="true"></i> <strong>Generic Processes: </strong> The primary generic processes are often relevant, too. <a href="' . $everythingprocesslink . '" target="_blank">Launch the Everything Process</a> or <a href="' . $remotecaseprocesslink . '" target="_blank">Launch the Remote Session Process</a>.<br>';
-	echo '<i class="fa fa-building" aria-hidden="true"></i> <strong>Organisation of Ticket: </strong>' . $org . '<br>';
+	echo '<i class="fa fa-list" aria-hidden="true"></i> <strong>Generic Processes: </strong> The primary generic processes are often relevant, too:<ul>';
+        $i = 0;
+        while ($i < $genericprocessescount)
+        {
+            echo '<a href=' . $genericprocesses[$i][2] .' title="' . $genericprocesses[$i][1] . '" target="_blank">' . $genericprocesses[$i][0] . '</a><br />';
+            $i++;
+        }
+	echo '</ul><br><i class="fa fa-building" aria-hidden="true"></i> <strong>Organisation of Ticket: </strong>' . $org . '<br>';
 	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Number: </strong>' . $ticketno . '<br>';
 	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Description: </strong>' . $originaldesc . '<br>';
 	echo '<i class="fa fa-ticket" aria-hidden="true"></i> <strong>Original Ticket Full Description: </strong>' . $ticketnicename . '<br>';
