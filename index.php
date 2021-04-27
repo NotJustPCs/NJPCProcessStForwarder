@@ -49,13 +49,11 @@ $ticketno = $_GET['ticketno'];
 $ticketnicename = $ticketno . ' ' . $originaldesc;
 #$ticketquerystring = '?checklist_name=' . urlencode($ticketnicename);
 $ticketquerystring = '?checklist_name=' . urlencode($ticketnicename) . '&zd_tkt_no=' . $ticketno . '&zd_tkt_desc=' . $originaldesc;
-$everythingprocesslink = 'https://app.process.st/templates/The-Everything-Process-iRNWttFAKahlKrFHxklORg/checklists/run' . $ticketquerystring;
 $processprocesslink = 'https://app.process.st/templates/Create-new-Process-uXELTkfN1s-Rrhe6UZxH-w/checklists/run' . $ticketquerystring;
-$remotecaseprocesslink = 'https://app.process.st/templates/New-Remote-Service-Case-Windows-jkMkEdwvfgI3S3gBbPNBWw/checklists/run' . $ticketquerystring;
 $genericprocesses = array (
-  array("Everything Process","This is a process about how to run actually go about doing anything. It should be followed when you're dealing with customers, or when you're sweeping the garage, and everything in between.","https://app.process.st/templates/The-Everything-Process-iRNWttFAKahlKrFHxklORg/checklists/run"),
-  array("Basic checks on a PC (Remote Service Case process)","This is a good one to run on pretty much every Windows PC we encounter","https://app.process.st/templates/New-Remote-Service-Case-Windows-jkMkEdwvfgI3S3gBbPNBWw/checklists/run")
-	array("Prepare for onsite visit","A good way to make sure you are well prepared when you are planning to visit a client","https://app.process.st/templates/Prepare-for-onsite-visit-s_ZbjLw52XgZsXsQeEBAsQ/checklists/run")
+  array("Everything Process","This is a process about how to run actually go about doing anything. It should be followed when you're dealing with customers, or when you're sweeping the garage, and everything in between.","https://app.process.st/templates/The-Everything-Process-iRNWttFAKahlKrFHxklORg/checklists/run")
+  ,array("Basic checks on a PC (Remote Service Case process)","This is a good one to run on pretty much every Windows PC we encounter","https://app.process.st/templates/New-Remote-Service-Case-Windows-jkMkEdwvfgI3S3gBbPNBWw/checklists/run")
+	,array("Prepare for onsite visit","A good way to make sure you are well prepared when you are planning to visit a client","https://app.process.st/templates/Prepare-for-onsite-visit-s_ZbjLw52XgZsXsQeEBAsQ/checklists/run")
 );
 $genericprocessescount = count($genericprocesses);
 
