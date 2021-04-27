@@ -132,7 +132,7 @@ if($httpCode == 404) {
         $i = 0;
         while ($i < $genericprocessescount)
         {
-            echo '<a href=' . $genericprocesses[$i][2] .' title="' . $genericprocesses[$i][1] . '" target="_blank">' . $genericprocesses[$i][0] . '</a><br />';
+            echo '<a href=' . $genericprocesses[$i][2] . $ticketquerystring' title="' . $genericprocesses[$i][1] . '" target="_blank">' . $genericprocesses[$i][0] . '</a><br />';
             $i++;
         }
 	echo '</ul><br><i class="fa fa-building" aria-hidden="true"></i> <strong>Organisation of Ticket: </strong>' . $org . '<br>';
