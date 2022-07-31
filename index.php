@@ -13,7 +13,7 @@
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 <!-- styles -->
-	<link rel="stylesheet" href="//www.njpcstatus.co.uk/style.css?v=20200127">
+	<link rel="stylesheet" href="//static.notjustpcs.co.uk/style.css?v=20220731">
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="//stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
@@ -24,7 +24,7 @@
 <nav class="navigation">
 	<section class="container">
 		<span class="navigation-title">
-			<img class="img" src="//www.njpcstatus.co.uk/Logo-Square-128px.png">
+			<img class="img" src="//static.notjustpcs.co.uk/Logo-Square-128px.png">
 			<h1 class="title">Not Just PCs</h1>
 			<h2 class="title">Process Finder</h2>
 		</span>
@@ -186,7 +186,7 @@ curl_close($handle);
 </div>
 <footer class="footer">
 	<div class="container">
-		<img height="64px" src="//www.njpcstatus.co.uk/Logo-Square-128px.png" />
+		<img height="64px" src="//static.notjustpcs.co.uk/Logo-Square-128px.png" />
 		<span class="text-muted">Not Just PCs</span>
 	</div>
 </footer>
