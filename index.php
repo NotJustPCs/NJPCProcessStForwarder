@@ -101,6 +101,9 @@ elseif ($org == 'Not Just PCs') {
 	elseif (($descbits[3] == 'review') && ($descbits[11] == 'Business')) {
 		$desc = 'newnjpcreview';
 	}
+	elseif (($descbits[0] == 'Monitor') && ($descbits[1] == 'is')) {
+		$desc = 'uptimerobotalert';
+	}
 	elseif (strpos($descbits[0],'njpc.uk]') !== false) {
 		if ($descbits[1] == 'DISKWARN') {
 			$desc = preg_replace('/[0-9]+/', '', $desc);
