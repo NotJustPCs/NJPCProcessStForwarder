@@ -71,7 +71,7 @@ if ($org == 'eBay') {
 			$desc = $org . 'offer';
 		}
   }
-elseif (($org == 'Companies House') && ($descbits[2] == 'Confirmation') && ($descbits[3] == 'Statement')){
+elseif (($org == 'Companies House') && ($descbits[2] == 'confirmation') && ($descbits[3] == 'statement')){
     $desc = $org . $descbits[2] . $descbits[3];
   }
 elseif ($org == 'Little Beach Boutique'){
