@@ -177,8 +177,13 @@ if($httpCode == 404) {
 	echo '<i class="fa fa-file-code-o" aria-hidden="true"></i> <strong>Long Process URL: </strong><a target="_blank" href="' . $targeturl . '">Link</a><br>';
 	echo '<i class="fa fa-file-code-o" aria-hidden="true"></i> <strong>Full Process URL: </strong><a target="_blank" href="' . $targeturlincquery . '">Link</a><br>';
 	echo '<i class="fa fa-play" aria-hidden="true"></i> <a href=' . $targeturlincquery . '>Click here</a> to start the process if you are not redirected.<br>';
-	echo '<i class="fa fa-list" aria-hidden="true"></i> <strong>Generic Processes: </strong> The primary generic processes are often relevant, too. <a href="' . $everythingprocesslink . '" target="_blank">Launch the Everything Process</a> or <a href="' . $remotecaseprocesslink . '" target="_blank">Launch the Remote Session Process</a>.<br>';
-	header( 'refresh:10; url=' . $targeturlincquery );
+	echo '<i class="fa fa-list" aria-hidden="true"></i> <strong>Generic Processes: </strong> The primary generic processes are often relevant, too:<br>';
+        $i = 0;
+        while ($i < $genericprocessescount)
+        {
+            echo '<a href=' . $genericprocesses[$i][2] . $ticketquerystring . ' title="' . $genericprocesses[$i][1] . '" target="_blank">' . $genericprocesses[$i][0] . '</a><br />';
+            $i++;
+        }	header( 'refresh:10; url=' . $targeturlincquery );
 	header("Location: " . $targeturlincquery );
 }
 
