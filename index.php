@@ -62,7 +62,7 @@ $genericprocessescount = count($genericprocesses);
 
 if ($org == 'eBay') {
 		if ($descbits[1] == 'sold') {
-    	$desc = $org . 'sold';
+		    	$desc = $org . 'sold';
 		}
 		elseif ($descbits[3] == 'sold:') {
 			$desc = $org . 'sold';
@@ -86,8 +86,13 @@ elseif (($descbits[2] == 'PCs]:') && ($descbits[3] == 'New') && ($descbits[4] ==
 elseif (($descbits[0] == 'New') && ($descbits[1] == 'customer:')) {
   	$desc = 'newddcust';
   }
+elseif ($org == 'GlobalSign'){
+	if ($descbits[1] == 'Renewal') {
+		$desc = 'gs-sslrenewal';
+	}
+  }
 elseif ($org == 'GoCardless'){
-		$desc = preg_replace('/[0-9]+/', '', $desc);
+	$desc = preg_replace('/[0-9]+/', '', $desc);
   }
 elseif ($org == 'Not Just PCs') {
 	if ($descbits[0] == '[GANDI]') {
