@@ -94,6 +94,11 @@ elseif ($org == 'GlobalSign'){
 elseif ($org == 'GoCardless'){
 	$desc = preg_replace('/[0-9]+/', '', $desc);
   }
+elseif ($org == 'Google'){
+	if (($descbits[1] == 'Phishing') && ($descbits[4] == 'post-delivery')) {
+		$desc = 'workspacephishingalert';
+	}
+  }
 elseif ($org == 'Not Just PCs') {
 	if ($descbits[0] == '[GANDI]') {
 		if ($descbits[1] == 'Invoice') {
