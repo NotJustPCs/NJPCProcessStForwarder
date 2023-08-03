@@ -98,6 +98,9 @@ elseif ($org == 'Google'){
 	if (($descbits[1] == 'Phishing') && ($descbits[4] == 'post-delivery')) {
 		$desc = 'workspacephishingalert';
 	}
+	elseif (($descbits[1] == 'Gmail') && ($descbits[4] == 'spoofing')) {
+		$desc = 'workspacespoofingalert';
+	}
   }
 elseif ($org == 'Not Just PCs') {
 	if ($descbits[0] == '[GANDI]') {
