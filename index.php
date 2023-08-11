@@ -130,10 +130,10 @@ elseif ($org == 'Not Just PCs') {
 	}
   }
 elseif (($descbits[0] == 'Approval') && (substr($descbits[1],0,9) == 'requested' )) {
-	$desc='synology-packages';
+	$desc='365approval';
   }
 elseif ($descbits[0] == '[office.notjustpcs.co.uk][CMS]Packages') {
-	$desc='365approval';
+	$desc='synology-packages';
   }
 
 $desc = $urlroot . seoUrl($desc);
